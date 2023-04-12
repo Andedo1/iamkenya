@@ -35,7 +35,7 @@ class _DestinationCoureselState extends State<DestinationCouresel> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10),
-      height: 500,
+      height: MediaQuery.of(context).size.width > 720? MediaQuery.of(context).size.height*0.8 : MediaQuery.of(context).size.height*0.3,
       child: Stack(
         children: [
           CarouselSlider(

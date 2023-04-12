@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iamkenya/customAppBar.dart';
 import 'package:iamkenya/destination_couresel.dart';
 
 void main() {
@@ -43,66 +44,112 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10,),
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-            height: 80,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(7),
-              color: Colors.white,
-              border: Border.all(color: Colors.black, width: 1),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "#Tuinuane Foundation",
-                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+      drawer: Drawer(
+        backgroundColor: Colors.green.withOpacity(1),
+        width: MediaQuery.of(context).size.width*0.4,
+        elevation: 0.5,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10,),
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              TextButton(
+                onPressed: (){},
+                child: const Text(
+                  "Join Us",
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.green,
-                    fontSize: 20,
+                    color: Colors.black,
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    const SizedBox(width: 20,),
-                    TextButton(onPressed: (){}, child: const Text("Donate", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black,),)),
-                    const SizedBox(width: 20,),
-                    TextButton(
-                      onPressed: (){},
-                      child: const Text(
-                          "About Us",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                      ),
+              ),
+              const SizedBox(height: 20,),
+              TextButton(
+                onPressed: (){},
+                child: const Text(
+                  "About Us",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20,),
+              TextButton(
+                onPressed: (){},
+                child: const Text(
+                  "Charity",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20,),
+              TextButton(
+                onPressed: (){},
+                child: const Text(
+                  "FAQ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20,),
+              ElevatedButton(
+                style: ButtonStyle(
+                    overlayColor: MaterialStateProperty.all(
+                        Colors.pink.withOpacity(0.8)
                     ),
-                    const SizedBox(width: 20,),
-                    TextButton(onPressed: (){}, child: const Text("Charity", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black,),)),
-                    const SizedBox(width: 20,),
-                    TextButton(onPressed: (){}, child: const Text("FAQ", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black,),)),
+                    backgroundColor: MaterialStateProperty.all(
+                        Colors.orange.withOpacity(0.5)
+                    ),
+                    padding: MaterialStateProperty.all(
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5)
+                    ),
+                    shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)
+                        )
+                    )
+                ),
+                onPressed: (){
 
-                  ],
-                )
-              ],
-            ),
+                },
+                child: const Text(
+                  "Donate",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 15,
+                  ),
+                ),
+              )
+            ],
           ),
+        ),
+      ),
+      body: ListView(
+        children: [
+          const CustomAppBAr(),
           // Bible verse container
           Container(
             padding: EdgeInsets.symmetric(horizontal: 10),
             margin: EdgeInsets.symmetric(horizontal: 50),
-            height: 50,
+            width: MediaQuery.of(context).size.width*0.7,
             child: Center(
-              child: const Text(
+              child: Text(
                 "Blessed is the hand that giveth than the hand that receiveth...",
+                overflow: TextOverflow.visible,
+                softWrap: true,
+                textAlign: TextAlign.justify,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: Colors.pink.withOpacity(0.7),
                   fontStyle: FontStyle.italic,
                   fontSize: 18,
                 ),
@@ -113,10 +160,47 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 10),
             margin: EdgeInsets.symmetric(horizontal: 50),
+            width: MediaQuery.of(context).size.height*0.8,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 DestinationCouresel(),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10,),
+          // Footer section
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text(
+                      "Our partners",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.pink,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
+                ),
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  children: [
+                    Image.asset("assets/images/WHO.png", height: 200, width: 200,),
+                    Image.asset("assets/images/SHOFCO.png", height: 200, width: 200,),
+                    Image.asset("assets/images/wfp-logo.png", height: 200, width: 200,),
+                    Image.asset("assets/images/redcross.png", height: 200, width: 200,),
+                  ],
+                )
               ],
             ),
           )
