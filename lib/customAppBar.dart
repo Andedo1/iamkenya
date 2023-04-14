@@ -22,7 +22,7 @@ class CustomAppBAr extends StatelessWidget {
             "#Tuinuane Foundation",
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
               fontWeight: FontWeight.bold,
-              color: Colors.green,
+              color: Colors.deepOrangeAccent,
               fontSize: 20,
             ),
           ),
