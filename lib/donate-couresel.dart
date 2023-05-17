@@ -34,7 +34,7 @@ class _DonateMessageCoureselState extends State<DonateMessageCouresel> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       height: MediaQuery.of(context).size.height*0.3,
 
       child: Stack(
@@ -42,7 +42,7 @@ class _DonateMessageCoureselState extends State<DonateMessageCouresel> {
           CarouselSlider(
             items: generatedDonateMasseges(),
             options: CarouselOptions(
-              autoPlayInterval: Duration(seconds: 7),
+              autoPlayInterval: const Duration(seconds: 7),
               enlargeCenterPage: true,
               autoPlay: true,
               viewportFraction: 1,

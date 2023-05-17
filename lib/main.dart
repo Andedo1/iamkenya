@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:iamkenya/customAppBar.dart';
 import 'package:iamkenya/destination_couresel.dart';
 
-import 'donate-couresel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,8 +52,8 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 0.5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10,),
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10,),
+          margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
           width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -141,10 +140,10 @@ class _MyHomePageState extends State<MyHomePage> {
           const CustomAppBAr(),
           // Bible verse container
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            margin: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
             width: size.width*0.7,
-            child: Center(
+            child: const Center(
               child: Text(
                 "Blessed is the hand that giveth than the hand that receiveth...",
                 overflow: TextOverflow.visible,
@@ -161,12 +160,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           // Slideshow container
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            margin: EdgeInsets.symmetric(horizontal: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 50),
             width: MediaQuery.of(context).size.height*0.8,
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 DestinationCouresel(),
               ],
             ),
@@ -174,31 +173,31 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(height: 10,),
           // Donate Section
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             width: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.black12,
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  margin: EdgeInsets.symmetric(vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  margin: const EdgeInsets.symmetric(vertical: 10),
                   width: size.width*0.7,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                   ),
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
-                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
                     decoration: BoxDecoration(
                       color: Colors.deepOrangeAccent,
                       borderRadius: BorderRadius.circular(12)
                     ),
-                    child: Text(
+                    child: const Text(
                       "The Smallest Act of giving is worth more than grandest intention",
                       textAlign: TextAlign.justify,
                       overflow: TextOverflow.visible,
@@ -213,7 +212,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 //Mobile money donations
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                   width: size.width*0.7,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -235,8 +234,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
           // Footer section
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-            margin: EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+            margin: const EdgeInsets.symmetric(horizontal: 10),
             width: double.infinity,
             decoration: const BoxDecoration(
               color: Colors.white,
@@ -251,7 +250,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontSize: 18,
                   ),
                 ),
-                Text(
+                const Text(
                   "I am beyond grateful to all our supporters and sponsors for all of your contributions. Your generosity and support have been instrumental in helping us make a difference in the lives of those in need. Whether it's through your donations, your time and effort, or your willingness to spread the word about our cause, you have made a tremendous impact.Without you, we would not be able to achieve our mission of making the world a better place. Every penny you have donated, every hour you have volunteered, every word you have shared has helped us get one step closer to our goal.So, from the bottom of my heart, I want to say thank you. Thank you for your kindness, your compassion, and your unwavering support. You are the true heroes in this story, and I am honored to have you by my side.Together, we can continue to make a positive impact on the world, and I look forward to what the future holds.",
                   textAlign: TextAlign.justify,
                   softWrap: true,

@@ -9,7 +9,7 @@ class DestinationCouresel extends StatefulWidget {
 }
 
 class _DestinationCoureselState extends State<DestinationCouresel> {
-  int _current = 0;
+  final int _current = 0;
   final List<String> images = [
     'assets/images/african-kids.jpg',
     'assets/images/Child-Poverty.jpg',
